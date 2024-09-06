@@ -1,8 +1,15 @@
+//Ques : Given the length and breadth of a rectangle, write a program to find whether numerically the area of the rectangle is greater than its perimeter.
 #include<iostream>
 using namespace std;
 int main(){
-    int radius = 10;
-    int circumference = 2*3.14*radius;
-    cout<<circumference;
+    int l,w;
+    cin>>l>>w;
+    int peri=2*(l+w);
+    int area=l*w;
+    if(area>peri){
+        cout<<"area is greater than perimeter"<<area;
+    }
+    else 
+    cout<<"perimeter is greater than area"<<peri;
     return 0;
 }
