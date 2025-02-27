@@ -1,8 +1,19 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int radius = 10;
-    int circumference = 2*3.14*radius;
-    cout<<circumference;
+
+int countWays(int n) {
+    if (n == 0) return 1; 
+    if (n == 1) return 1; 
+    if (n == 2) return 2;
+    return countWays(n - 1) + countWays(n - 2) + countWays(n - 3);
+}
+
+int main() {
+    int n;
+    cout << "Enter the number of stairs: ";
+    cin >> n;
+
+    cout << "Number of ways to climb " << n << " stairs: " << countWays(n) << endl;
+
     return 0;
 }
