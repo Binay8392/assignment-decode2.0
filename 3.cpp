@@ -1,22 +1,12 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
+int numberOfSteps(int num) { 
+    if(num==0) return 0; 
+    if(num==1) return 1; 
+    return numberOfSteps(num/2)+(num%2==0?1:2); 
 
-bool isPowerOfTwo(int n) {
-    if (n == 1) return true;
-    if (n < 1 || n % 2 != 0) return false;
-    return isPowerOfTwo(n / 2);
-}
-
-int main() {
-    int num;
-    cout << "Enter a positive integer: ";
-    cin >> num;
-
-    if (isPowerOfTwo(num)) {
-        cout << num << " is a power of 2." << endl;
-    } else {
-        cout << num << " is NOT a power of 2." << endl;
+    };
+    int main(){
+        cout<<numberOfSteps(3);
+        return 0;
     }
-
-    return 0;
-}

@@ -1,19 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int sumOddNumbers(int a, int b) {
-    if (a > b) {
-    return 0;
+int rev(int num, int reversedNum = 0) {
+    if (num == 0) {
+        return reversedNum;
     }
-    if (a % 2 != 0) {
-    return a + sumOddNumbers(a + 1, b);
-    } else {
-    return sumOddNumbers(a + 1, b);
-    }
-    }
+    return rev(num / 10, reversedNum * 10 + num % 10);
+}
 
 int main() {
-    cout<<sumOddNumbers(2,5);
-
+    int num = 56;
+    cout << "Reversed number: " << rev(num) << endl;
     return 0;
 }
